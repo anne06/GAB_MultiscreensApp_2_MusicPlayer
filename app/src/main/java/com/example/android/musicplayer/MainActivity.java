@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(LOG_TAG, "In OnClick() Play button");
                 mediaPlayer.start();
+                /**
+                 * Add a listener to handle the end of the song
+                 */
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        Toast.makeText(getApplicationContext(), "I'm done", Toast.LENGTH_SHORT).show();
+                        Log.d(LOG_TAG, "Morceau termine");
+                    }
+                });
             }
         });
 
@@ -75,5 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
             }
         });
+
+
     }
 }
