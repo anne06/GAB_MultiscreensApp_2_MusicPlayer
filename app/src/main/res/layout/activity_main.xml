@@ -26,18 +26,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/minus_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            />
+        <Button
             android:id="@+id/plus_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+"
             />
 
-        <Button
-            android:id="@+id/minus_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            />
+
 
     </LinearLayout>
 
